@@ -1,15 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacation Plan</title>
-  </head>
-  <body>
-    <h1>Vacation Plan</h1>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .plan {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        .plan h2 {
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #3498db;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            background: #e7f3ff;
+        }
+        .tab:not(:last-child) {
+            margin-right: 10px;
+        }
+        .tab.active {
+            background: #3498db;
+            color: #fff;
+        }
+        .iframe-container, .image-container {
+            display: none;
+        }
+        .iframe-container.active, .image-container.active {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 0 0 8px 8px;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #3498db;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vacation Plan</h1>
+        
+        <div class="plan">
+            <h2>川で BBQ と魚釣り (三重県)</h2>
+            
+            <h3>Vision</h3>
+            <p>
+                日本最大級の商業リゾート <a href="https://www.his-j.com/kokunai/kanto/tour_info/okinawa/catchy/?p=10847">VISON (ヴィソン)</a>
+            </p>
+            
+            <h3>川</h3>
+            <div class="tabs">
+                <div class="tab active" data-tab="kawa1">川 1</div>
 
-    <h2>三重県</h2>
-    <h3>川でBBQと魚釣り</h3>
-    <iframe width="100%" height="600px"  src="https://www.his-j.com/kokunai/kanto/tour_info/okinawa/catchy/?p=10847"></iframe>
-  </body>
+            </div>
+            <div class="iframe-container active" id="kawa1">
+                <iframe src="https://www.jalan.net/kankou/spt_guide000000183224/?screenId=OUW1701"></iframe>
+            </div>
+    
+            <h3>airbnb</h3>
+            <p>
+                海釣り体験、温泉あり。13,402円<br>
+                <div class="tabs">
+                    <div class="tab active" data-tab="airbnb1">airbnb</div>
+                </div>
+                <div class="image-container active" id="airbnb1">
+                    <img src="./static/1.png" alt="Airbnb Listing 1">
+                    <p><a href="https://www.airbnb.jp/rooms/46285663?check_out=2024-08-14&viralityEntryPoint=1&unique_share_id=4123A374-C897-481B-BF33-7E8F39606A90&slcid=e2f8fbad36034ac7ac355d4951c830cc&s=76&feature=share&adults=3&check_in=2024-08-13&channel=native&slug=vAVpWxJB&source_impression_id=p3_1719499808_P3YLYT8udleW8dHo">Airbnbのページへ。</a></p>
+                </div>
+            </p>
+        </div>
+        
+        <div class="plan">
+            <h2>猫島と岡山観光プラン</h2>
+            
+            <h3>ネコ島</h3>
+            <div class="tabs">
+                <div class="tab active" data-tab="neko1">ネコ島 1</div>
+                <div class="tab" data-tab="neko2">ネコ島 2</div>
+            </div>
+            <div class="iframe-container active" id="neko1">
+                <iframe src="https://travel.spot-app.jp/manabeshima/"></iframe>
+            </div>
+            <div class="iframe-container" id="neko2">
+                <iframe src="https://www.kasaoka-kankou.jp/island/manabeshima"></iframe>
+            </div>
+     
+            
+            <h3>airbnb</h3>
+            <p>
+                室内ビリヤードあり。部屋綺麗。23,106円<br>
+                <div class="tabs">
+                    <div class="tab active" data-tab="airbnb2">airbnb</div>
+                </div>
+                <div class="image-container active" id="airbnb2">
+                    <img src="./static/2.png" alt="Airbnb Listing 2">
+                    <p><a href="https://www.airbnb.jp/rooms/898253906214515330?adults=3&enable_m3_private_room=true&search_mode=regular_search&check_in=2024-08-13&check_out=2024-08-14&source_impression_id=p3_1719497786_P3eMvxolH98b7he3&previous_page_section_name=1000&federated_search_id=5ce5c5f3-6c93-4a05-aa34-fa31d518e5be">Airbnbのページへ。</a></p>
+                </div>
+            </p>
+        </div>
+        
+        <div class="plan">
+            <h2>和歌山の無人島</h2>
+            
+            <h3>友ヶ島 (和歌山の無人島)</h3>
+            <div class="tabs">
+                <div class="tab active" data-tab="tomo1">友ヶ島</div>
+            </div>
+            <div class="iframe-container active" id="tomo1">
+                <iframe src="https://www.wakayamakanko.com/sightseeing/nature2.html"></iframe>
+            </div>
+            
+            <h3>airbnb</h3>
+            <p>
+                りんくうタウンの鬼綺麗ほぼホテル。16,200円<br>
+                <div class="tabs">
+                    <div class="tab active" data-tab="airbnb3">airbnb</div>
+                </div>
+                <div class="image-container active" id="airbnb3">
+                    <img src="./static/3.png" alt="Airbnb Listing 3">
+                    <p><a href="https://www.airbnb.jp/rooms/43123096?adults=3&enable_m3_private_room=true&location=%E5%92%8C%E6%AD%8C%E5%B1%B1&search_mode=regular_search&check_in=2024-08-13&check_out=2024-08-14&source_impression_id=p3_1719497232_P3n1rhaBOywlAVZd&previous_page_section_name=1001&federated_search_id=554bbbd0-693e-4be8-9497-3e72d4b25c7f">Airbnbのページへ。</a></p>
+                </div>
+            </p>
+            
+        </div>
+
+        <div class="plan">
+            <h3>自然の中のairbnbでBBQが楽じゃね? 近くに元ネコ島あり。</h3>
+            
+            <h3>ネコ島</h3>
+            <div class="tabs">
+                <div class="tab active" data-tab="neko4">ネコ島</div>
+            </div>
+            <div class="image-container active" id="neko4">
+                <img src="./static/5.png" alt="ねこのページへ">
+                <p><a href="https://www.airbnb.jp/rooms/757100147395844000?adults=3&enable_m3_private_room=true&search_mode=regular_search&check_in=2024-08-13&check_out=2024-08-14&source_impression_id=p3_1719497645_P3t1oVzK-K66WtGk&previous_page_section_name=1000&federated_search_id=458561b2-73d1-4522-bf79-ee9e9b6f62cb">ねこのページへ。</a></p>
+            </div>
+            
+            <h3>airbnb</h3>
+            <p>
+                めちゃ部屋雰囲気よし。自然の中。BBQそのままできる。(滋賀) 32,000円<br>
+                <div class="tabs">
+                    <div class="tab active" data-tab="airbnb4">airbnb</div>
+                </div>
+                <div class="image-container active" id="airbnb4">
+                    <img src="./static/4.png" alt="Airbnb Listing 4">
+                    <p><a href="https://www.airbnb.jp/rooms/757100147395844000?adults=3&enable_m3_private_room=true&search_mode=regular_search&check_in=2024-08-13&check_out=2024-08-14&source_impression_id=p3_1719497645_P3t1oVzK-K66WtGk&previous_page_section_name=1000&federated_search_id=458561b2-73d1-4522-bf79-ee9e9b6f62cb">Airbnbのページへ。</a></p>
+                </div>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Vacation Plan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const parent = this.parentElement.parentElement;
+                parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                parent.querySelectorAll('.iframe-container, .image-container').forEach(container => container.classList.remove('active'));
+
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                parent.querySelector(`#${tabId}`).classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
